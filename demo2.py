@@ -13,8 +13,8 @@ from fastapi.staticfiles import StaticFiles
 app = FastAPI()
 
 
-from mark.web import router as mark_router
-app.include_router(mark_router, prefix="/api")
+from api.web import router as api_router
+app.include_router(api_router, prefix="/api")
 
 @app.get("/", response_class=FileResponse)
 async def read_index():
